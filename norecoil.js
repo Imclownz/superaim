@@ -1,14 +1,13 @@
-// No Recoil & Spread Script
+// Ultra No Recoil + Anti Spread
 let body = $response.body;
 
 try {
   let data = JSON.parse(body);
   data.recoil = 0;
-  data.spread = 0;
   data.recoilPattern = "none";
-  data.recoilMultiplier = 0;
-  data.shake = false;
+  data.spread = 0;
   data.randomKick = false;
+  data.weaponStabilization = true;
   body = JSON.stringify(data);
 } catch (e) {
   console.log("No Recoil error:", e);
