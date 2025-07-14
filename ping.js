@@ -1,18 +1,16 @@
-// Network Optimizer - Ultra Low Ping Simulation
+// Trigger Bot - Fast Reactive Fire
 let body = $response.body;
 
 try {
   let data = JSON.parse(body);
-  data.latency = 5;
-  data.packetLoss = 0;
-  data.networkType = "udp";
-  data.packetJitter = 0;
-  data.jitterControl = true;
-  data.packetFlush = true;
-  data.priorityMode = "realtime";
+  data.triggerBot = true;
+  data.triggerDelay = 35;
+  data.fireOnSight = true;
+  data.reactionTime = "ultra-fast";
+  data.targetValidation = true;
   body = JSON.stringify(data);
 } catch (e) {
-  console.log("Ping optimization error:", e);
+  console.log("Trigger error:", e);
 }
 
 $done({ body });
