@@ -1,16 +1,16 @@
-// FPS and Visual Boost Script
+// FPS Boost + Input Delay Reducer
 let body = $response.body;
 
 try {
   let data = JSON.parse(body);
-  data.fpsLimit = 120;
+  data.fpsLimit = 144;
   data.fpsBoostEnabled = true;
+  data.inputDelayReduction = true;
+  data.renderAheadLimit = 0;
+  data.lowLatencyMode = true;
   data.graphicsQuality = "ultra-low";
-  data.textureFiltering = "low";
-  data.resolutionScale = 0.75;
-  data.renderDistance = "short";
-  data.disableParticles = true;
-  data.optimizedShaders = true;
+  data.uiAnimations = false;
+  data.resolutionScale = 0.65;
   body = JSON.stringify(data);
 } catch (e) {
   console.log("Boost error:", e);
